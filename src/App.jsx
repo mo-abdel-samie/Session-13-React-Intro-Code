@@ -1,36 +1,36 @@
-import { AddForm } from "./components/AddForm";
-import { Footer } from "./components/Footer";
-import { Headr } from "./components/Headr";
-import { NavBar } from "./components/NavBar";
-import { ToDoItems } from "./components/ToDoItems";
+import React from "react";
+import { NavBar } from "./layout/NavBar";
+import { Footer } from "./layout/Footer";
 
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/js/bootstrap"
-
-const Title = (ay7aga) => (
-  <h2>
-    {ay7aga.greet ? ay7aga.greet : "Hello"} {ay7aga.name}{" "}
-  </h2>
-);
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Login } from "./pages/Login";
+import { Error404 } from "./pages/Error404";
+import { Route, Routes } from "react-router-dom";
 
 export default function App() {
-    return (
-        <>
-        <Headr />
-        <NavBar />
-            <main>
-                <AddForm />
-                <ToDoItems />
+  return (
+    <React.Fragment>
+      <NavBar />
 
-            <section>
-                <Title name="A.Samie" greet="Hi" />
-                <Title name="Jo" />
-                <Title name="Yara" />
-                <Title name="Fatma" />
-                <Title name="Mo" />
-            </section>
-        </main>
-        <Footer />
-        </>
+      <Routes>
+        {/* Home Page */}
+        {/*<Home /> */}
+        <Route path="/" element={<Home />} />
+        {/* About Page */}
+        {/*<About />*/}
+        <Route path="/about" element={<About />} />
+        {/* Login Page */}
+        {/*<Login />*/}
+        <Route path="/login" element={<Login />} />
+        {/* 404 Page */}
+        {/*<Error404 />*/}
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+
+      <Footer />
+    </React.Fragment>
   );
 }
