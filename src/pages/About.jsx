@@ -6,6 +6,6 @@ export const About = () => {
       <header>About</header>
 
       <main>About</main>
-    </React.Fragment>
+    </React.Fragment> 
   );
 };

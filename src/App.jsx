@@ -6,9 +6,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
-import { Login } from "./pages/Login";
 import { Error404 } from "./pages/Error404";
 import { Route, Routes } from "react-router-dom";
+import { Registration } from "./pages/Registration";
+import { Quiz } from "./pages/Quiz";
 
 export default function App() {
   return (
@@ -24,7 +25,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
         {/* Login Page */}
         {/*<Login />*/}
-        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/quiz" element={<Quiz />} />
         {/* 404 Page */}
         {/*<Error404 />*/}
         <Route path="*" element={<Error404 />} />
